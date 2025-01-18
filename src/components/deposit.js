@@ -19,8 +19,8 @@ const Deposit = () => {
   };
 
   return (
-    <div className="deposit-container flex h-screen">
-      <Side>
+    <div className="flex h-screen">
+      <Side className="w-64 bg-gradient-to-b from-gray-800 to-gray-700 text-white p-6 shadow-md flex flex-col justify-between fixed h-full">
         <h2 
           onClick={handleDepositClick} 
           className="flex items-center justify-center gap-2 cursor-pointer p-1 rounded-lg text-black hover:bg-gray-400 hover:shadow-lg transition duration-300 ease-in-out"
@@ -28,9 +28,57 @@ const Deposit = () => {
           <CurrencyExchangeIcon className="text-2xl" />
           <span className="font-semibold text-lg">Deposit</span>
         </h2>
+
+       <header className="bg-gray-200 text-gray-800 p-4 flex flex-col gap-4 justify-start mt-8">
+  <button
+    className={`w-full px-4 py-2 rounded flex items-center gap-2 ${
+      activeTab === "inProgress"
+        ? "bg-gray-400 text-white"
+        : "bg-gray-100 text-gray-800"
+    }`}
+    onClick={() => setActiveTab("inProgress")}
+  >
+    <RefreshIcon />
+    <span>In Progress</span>
+  </button>
+  <button
+    className={`w-full px-4 py-2 rounded flex items-center gap-2 ${
+      activeTab === "completed"
+        ? "bg-gray-400 text-white"
+        : "bg-gray-100 text-gray-800"
+    }`}
+    onClick={() => setActiveTab("completed")}
+  >
+    <AddTaskIcon />
+    <span>Completed</span>
+  </button>
+  <button
+    className={`w-full px-4 py-2 rounded flex items-center gap-2 ${
+      activeTab === "dropped"
+        ? "bg-gray-400 text-white"
+        : "bg-gray-100 text-gray-800"
+    }`}
+    onClick={() => setActiveTab("dropped")}
+  >
+    <DeleteOutlineIcon />
+    <span>Dropped</span>
+  </button>
+  <button
+    className={`w-full px-4 py-2 rounded flex items-center gap-2 ${
+      activeTab === "all"
+        ? "bg-gray-400 text-white"
+        : "bg-gray-100 text-gray-800"
+    }`}
+    onClick={() => setActiveTab("all")}
+  >
+    <LanguageIcon />
+    <span>All</span>
+  </button>
+</header>
+
       </Side>
 
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 ml-64 bg-gray-100">
         <header className="bg-gray-200 text-gray-800 p-4 flex gap-4 justify-around">
           <button
             className={`px-4 py-2 rounded flex items-center gap-2 ${
@@ -78,7 +126,7 @@ const Deposit = () => {
           </button>
         </header>
 
-        <main className="flex-1 p-6 bg-gray-100">
+        <main className="flex-1 p-6">
           {isLoading ? (
             <div className="flex justify-center items-center h-full">
               <div className="border-t-4 border-blue-500 border-solid w-12 h-12 rounded-full animate-spin"></div>
