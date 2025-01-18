@@ -20,76 +20,76 @@ const Deposit = () => {
 
   return (
     <div className="flex h-screen">
-      <Side className="w-64 bg-gradient-to-b from-gray-800 to-gray-700 text-white p-6 shadow-md flex flex-col justify-between fixed h-full">
-        <h2 
-          onClick={handleDepositClick} 
-          className="flex items-center justify-center gap-2 cursor-pointer p-1 rounded-lg text-black hover:bg-gray-400 hover:shadow-lg transition duration-300 ease-in-out"
-        >
-          <CurrencyExchangeIcon className="text-2xl" />
-          <span className="font-semibold text-lg">Deposit</span>
-        </h2>
-
-
-      </Side>
+ <Side className="w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 bg-gradient-to-b from-gray-800 to-blue-600 text-white p-6 shadow-md flex flex-col justify-between fixed h-full">
+  <h2 
+    onClick={handleDepositClick} 
+    className="flex items-center justify-center gap-2 cursor-pointer p-1 rounded-lg text-black hover:bg-gray-400 hover:shadow-lg transition duration-300 ease-in-out"
+  >
+    <CurrencyExchangeIcon className="text-2xl" />
+    <span className="font-semibold text-lg">Deposit</span>
+  </h2>
+</Side>
 
       <div className="flex-1 ml-64 bg-gray-100">
-        <header className="bg-gray-200 text-gray-800 p-4 flex gap-4 justify-around">
-          <button
-            className={`px-4 py-2 rounded flex items-center gap-2 ${
-              activeTab === "inProgress"
-                ? "bg-gray-400 text-white"
-                : "bg-gray-100 text-gray-800"
-            }`}
-            onClick={() => setActiveTab("inProgress")}
-          >
-            <RefreshIcon />
-            <span>In Progress</span>
-          </button>
-          <button
-            className={`px-4 py-2 rounded flex items-center gap-2 ${
-              activeTab === "completed"
-                ? "bg-gray-400 text-white"
-                : "bg-gray-100 text-gray-800"
-            }`}
-            onClick={() => setActiveTab("completed")}
-          >
-            <AddTaskIcon />
-            <span>Completed</span>
-          </button>
-          <button
-            className={`px-4 py-2 rounded flex items-center gap-2 ${
-              activeTab === "dropped"
-                ? "bg-gray-400 text-white"
-                : "bg-gray-100 text-gray-800"
-            }`}
-            onClick={() => setActiveTab("dropped")}
-          >
-            <DeleteOutlineIcon />
-            <span>Dropped</span>
-          </button>
-          <button
-            className={`px-4 py-2 rounded flex items-center gap-2 ${
-              activeTab === "all"
-                ? "bg-gray-400 text-white"
-                : "bg-gray-100 text-gray-800"
-            }`}
-            onClick={() => setActiveTab("all")}
-          >
-            <LanguageIcon />
-            <span>All</span>
-          </button>
-        </header>
+  <header className="bg-gray-200 text-gray-800 p-4 flex gap-4 justify-around">
+    <button
+      className={`w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
+        activeTab === "inProgress"
+          ? "bg-gradient-to-r from-blue-500 to-Blue-500 text-white"
+          : "bg-gray-100 text-gray-800"
+      }`}
+      onClick={() => setActiveTab("inProgress")}
+    >
+      <RefreshIcon />
+      <span>In Progress</span>
+    </button>
+    <button
+      className={`w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
+        activeTab === "completed"
+          ? "bg-gradient-to-r from-green-500 to-lightgreen-600 text-white"
+          : "bg-gray-100 text-gray-800"
+      }`}
+      onClick={() => setActiveTab("completed")}
+    >
+      <AddTaskIcon />
+      <span>Completed</span>
+    </button>
+    <button
+      className={`w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
+        activeTab === "dropped"
+          ? "bg-gradient-to-r from-red-500 to-lightred-600 text-white"
+          : "bg-gray-100 text-gray-800"
+      }`}
+      onClick={() => setActiveTab("dropped")}
+    >
+      <DeleteOutlineIcon />
+      <span>Dropped</span>
+    </button>
+    <button
+  className={`w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
+    activeTab === "all"
+      ? "bg-gradient-to-r from-blue-400 to-lightBlue-300 text-white"
+      : "bg-gray-100 text-gray-800"
+  }`}
+  onClick={() => setActiveTab("all")}
+>
+  <LanguageIcon />
+  <span>All</span>
+</button>
 
-        <main className="flex-1 p-6">
-          {isLoading ? (
-            <div className="flex justify-center items-center h-full">
-              <div className="border-t-4 border-blue-500 border-solid w-12 h-12 rounded-full animate-spin"></div>
-            </div>
-          ) : (
-            <MainComponent activeTab={activeTab} />
-          )}
-        </main>
+  </header>
+
+  <main className="flex-1 p-6">
+    {isLoading ? (
+      <div className="flex justify-center items-center h-full">
+        <div className="border-t-4 border-blue-500 border-solid w-12 h-12 rounded-full animate-spin"></div>
       </div>
+    ) : (
+      <MainComponent activeTab={activeTab} />
+    )}
+  </main>
+</div>
+
     </div>
   );
 };
