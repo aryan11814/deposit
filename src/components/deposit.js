@@ -32,21 +32,22 @@ const Deposit = () => {
 
       <div className="flex-1 ml-64 bg-gray-100">
   <header className="bg-gray-200 text-gray-800 p-4 flex gap-4 justify-around">
+  <button
+  className={`w-1/4 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
+    activeTab === "inProgress"
+      ? "bg-gradient-to-r from-green-500 to-blue-500 text-white"
+      : "bg-gray-100 text-gray-800"
+  }`}
+  onClick={() => setActiveTab("inProgress")}
+>
+  <RefreshIcon />
+  <span>In Progress</span>
+</button>
+
     <button
-      className={`w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
-        activeTab === "inProgress"
-          ? "bg-gradient-to-r from-blue-500 to-Blue-500 text-white"
-          : "bg-gray-100 text-gray-800"
-      }`}
-      onClick={() => setActiveTab("inProgress")}
-    >
-      <RefreshIcon />
-      <span>In Progress</span>
-    </button>
-    <button
-      className={`w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
+      className={`w-1/4 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
         activeTab === "completed"
-          ? "bg-gradient-to-r from-green-500 to-lightgreen-600 text-white"
+          ? "bg-gradient-to-r from-green-500 to-blue-500 text-white"
           : "bg-gray-100 text-gray-800"
       }`}
       onClick={() => setActiveTab("completed")}
@@ -55,9 +56,9 @@ const Deposit = () => {
       <span>Completed</span>
     </button>
     <button
-      className={`w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
+      className={`w-1/4 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
         activeTab === "dropped"
-          ? "bg-gradient-to-r from-red-500 to-lightred-600 text-white"
+          ? "bg-gradient-to-r from-green-500 to-blue-500 text-white"
           : "bg-gray-100 text-gray-800"
       }`}
       onClick={() => setActiveTab("dropped")}
@@ -66,9 +67,9 @@ const Deposit = () => {
       <span>Dropped</span>
     </button>
     <button
-  className={`w-1/5 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
+  className={`w-1/4 px-4 py-2 rounded-l-full rounded-r-full flex items-center gap-2 ${
     activeTab === "all"
-      ? "bg-gradient-to-r from-blue-400 to-lightBlue-300 text-white"
+      ? "bg-gradient-to-r from-green-500 to-blue-500 text-white"
       : "bg-gray-100 text-gray-800"
   }`}
   onClick={() => setActiveTab("all")}
