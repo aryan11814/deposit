@@ -29,52 +29,6 @@ const Deposit = () => {
           <span className="font-semibold text-lg">Deposit</span>
         </h2>
 
-       <header className="bg-gray-200 text-gray-800 p-4 flex flex-col gap-4 justify-start mt-8">
-  <button
-    className={`w-full px-4 py-2 rounded flex items-center gap-2 ${
-      activeTab === "inProgress"
-        ? "bg-gray-400 text-white"
-        : "bg-gray-100 text-gray-800"
-    }`}
-    onClick={() => setActiveTab("inProgress")}
-  >
-    <RefreshIcon />
-    <span>In Progress</span>
-  </button>
-  <button
-    className={`w-full px-4 py-2 rounded flex items-center gap-2 ${
-      activeTab === "completed"
-        ? "bg-gray-400 text-white"
-        : "bg-gray-100 text-gray-800"
-    }`}
-    onClick={() => setActiveTab("completed")}
-  >
-    <AddTaskIcon />
-    <span>Completed</span>
-  </button>
-  <button
-    className={`w-full px-4 py-2 rounded flex items-center gap-2 ${
-      activeTab === "dropped"
-        ? "bg-gray-400 text-white"
-        : "bg-gray-100 text-gray-800"
-    }`}
-    onClick={() => setActiveTab("dropped")}
-  >
-    <DeleteOutlineIcon />
-    <span>Dropped</span>
-  </button>
-  <button
-    className={`w-full px-4 py-2 rounded flex items-center gap-2 ${
-      activeTab === "all"
-        ? "bg-gray-400 text-white"
-        : "bg-gray-100 text-gray-800"
-    }`}
-    onClick={() => setActiveTab("all")}
-  >
-    <LanguageIcon />
-    <span>All</span>
-  </button>
-</header>
 
       </Side>
 
